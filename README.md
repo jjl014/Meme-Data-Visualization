@@ -12,7 +12,7 @@ Memes have become a global phenomenon over the years and it's become a way to ex
 
 ### Wireframes
 
-![meme-bubble][]
+![meme-bubble][memestats-wireframe]
 
 ### Architecture and Technologies
 
@@ -57,4 +57,4 @@ Memes have become a global phenomenon over the years and it's become a way to ex
 - [ ] Make use of the different API methods to generate different visualizations
 - [ ] Create a different way to visualize the data
 
-[memestats-wireframe]:
+[memestats-wireframe]: https://github.com/jjl014/MemeStats/blob/master/docs/MemeStats.png
