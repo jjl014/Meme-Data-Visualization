@@ -1,0 +1,427 @@
+{
+  "Y-U-No": {
+    "generatorID": 2,
+    "imageID": 166088,
+    "displayName": "Y U No",
+    "urlName": "Y-U-No",
+    "totalVotesScore": 9290,
+    "instancesCount": 2435015,
+    "ranking": 1,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 2,
+    "totalVotesSum": 11264,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder88/400x/166088.jpg"
+  },
+  "Willy-Wonka": {
+    "generatorID": 542616,
+    "imageID": 2729805,
+    "displayName": "Willy Wonka",
+    "urlName": "Willy-Wonka",
+    "totalVotesScore": 2931,
+    "instancesCount": 2122414,
+    "ranking": 5,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 542616,
+    "totalVotesSum": 3964,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder805/400x/2729805.jpg"
+  },
+  "The-Most-Interesting-Man-In-The-World": {
+    "generatorID": 74,
+    "imageID": 2485,
+    "displayName": "The Most Interesting Man In The World",
+    "urlName": "The-Most-Interesting-Man-In-The-World",
+    "totalVotesScore": 4957,
+    "instancesCount": 2053336,
+    "ranking": 3,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 74,
+    "totalVotesSum": 6734,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder485/400x/2485.jpg"
+  },
+  {
+    "generatorID": 305,
+    "imageID": 84688,
+    "displayName": "Futurama Fry",
+    "urlName": "Futurama-Fry",
+    "totalVotesScore": 6388,
+    "instancesCount": 1810348,
+    "ranking": 2,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 305,
+    "totalVotesSum": 8106,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder688/400x/84688.jpg"
+  },
+  {
+    "generatorID": 121,
+    "imageID": 1031,
+    "displayName": "Success Kid",
+    "urlName": "Success-Kid",
+    "totalVotesScore": 4559,
+    "instancesCount": 1528810,
+    "ranking": 6,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 121,
+    "totalVotesSum": 6012,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder31/400x/1031.jpg"
+  },
+  {
+    "generatorID": 689854,
+    "imageID": 3291562,
+    "displayName": "One Does Not Simply",
+    "urlName": "One-Does-Not-Simply",
+    "totalVotesScore": 2594,
+    "instancesCount": 1383704,
+    "ranking": 7,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 689854,
+    "totalVotesSum": 3816,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder562/400x/3291562.jpg"
+  },
+  {
+    "generatorID": 740857,
+    "imageID": 3459374,
+    "displayName": "Bad Luck Brian",
+    "urlName": "Bad-Luck-Brian",
+    "totalVotesScore": 2832,
+    "instancesCount": 1321919,
+    "ranking": 8,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 740857,
+    "totalVotesSum": 3975,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder374/400x/3459374.jpg"
+  },
+  {
+    "generatorID": 340895,
+    "imageID": 2055789,
+    "displayName": "First World Problems",
+    "urlName": "First-World-Problems",
+    "totalVotesScore": 2068,
+    "instancesCount": 980098,
+    "ranking": 11,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 340895,
+    "totalVotesSum": 2829,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder789/400x/2055789.jpg"
+  },
+  {
+    "generatorID": 17,
+    "imageID": 984,
+    "displayName": "Philosoraptor",
+    "urlName": "Philosoraptor",
+    "totalVotesScore": 9548,
+    "instancesCount": 825778,
+    "ranking": 4,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 17,
+    "totalVotesSum": 11956,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder984/400x/984.jpg"
+  },
+  {
+    "generatorID": 1771888,
+    "imageID": 6541210,
+    "displayName": "Grumpy Cat ",
+    "urlName": "Grumpy-Cat",
+    "totalVotesScore": 4042,
+    "instancesCount": 785243,
+    "ranking": 10,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 1771888,
+    "totalVotesSum": 2210,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder210/400x/6541210.jpg"
+  },
+  {
+    "generatorID": 543246,
+    "imageID": 2732092,
+    "displayName": "Winter is Coming",
+    "urlName": "Winter-Is-Coming",
+    "totalVotesScore": 18,
+    "instancesCount": 617628,
+    "ranking": 23,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 543246,
+    "totalVotesSum": 404,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder92/400x/2732092.jpg"
+  },
+  {
+    "generatorID": 116,
+    "imageID": 142442,
+    "displayName": "Forever Alone",
+    "urlName": "Forever-Alone",
+    "totalVotesScore": 3436,
+    "instancesCount": 548361,
+    "ranking": 12,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 116,
+    "totalVotesSum": 4135,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder442/400x/142442.jpg"
+  },
+  {
+    "generatorID": 534,
+    "imageID": 699717,
+    "displayName": "Good Guy Greg",
+    "urlName": "Good-Guy-Greg",
+    "totalVotesScore": 5607,
+    "instancesCount": 497728,
+    "ranking": 9,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 534,
+    "totalVotesSum": 6461,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder717/400x/699717.jpg"
+  },
+  {
+    "generatorID": 142,
+    "imageID": 366130,
+    "displayName": "Scumbag Steve",
+    "urlName": "Scumbag-Steve",
+    "totalVotesScore": 2088,
+    "instancesCount": 436999,
+    "ranking": 19,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 142,
+    "totalVotesSum": 2531,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder130/400x/366130.jpg"
+  },
+  {
+    "generatorID": 1118843,
+    "imageID": 4796874,
+    "displayName": "What If I Told You",
+    "urlName": "What-If-I-Told-You",
+    "totalVotesScore": 857,
+    "instancesCount": 404087,
+    "ranking": 27,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 1118843,
+    "totalVotesSum": 1072,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder874/400x/4796874.jpg"
+  },
+  {
+    "generatorID": 318374,
+    "imageID": 1986282,
+    "displayName": "Conspiracy Keanu",
+    "urlName": "Conspiracy-Keanu",
+    "totalVotesScore": 2716,
+    "instancesCount": 337581,
+    "ranking": 18,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 318374,
+    "totalVotesSum": 3383,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder282/400x/1986282.jpg"
+  },
+  {
+    "generatorID": 3466964,
+    "imageID": 11590722,
+    "displayName": "Kermit The Frog Drinking Tea",
+    "urlName": "Kermit-The-Frog-Drinking-Tea",
+    "totalVotesScore": 131,
+    "instancesCount": 319987,
+    "ranking": 38,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 3466964,
+    "totalVotesSum": 215,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder722/400x/11590722.jpg"
+  },
+  {
+    "generatorID": 79,
+    "imageID": 108785,
+    "displayName": "Yo Dawg",
+    "urlName": "Yo-Dawg",
+    "totalVotesScore": 1926,
+    "instancesCount": 317879,
+    "ranking": 21,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 79,
+    "totalVotesSum": 2268,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder785/400x/108785.jpg"
+  },
+  {
+    "generatorID": 318065,
+    "imageID": 1985197,
+    "displayName": "All the things",
+    "urlName": "All-The-Things",
+    "totalVotesScore": 1513,
+    "instancesCount": 311845,
+    "ranking": 24,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 318065,
+    "totalVotesSum": 1903,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder197/400x/1985197.jpg"
+  },
+  {
+    "generatorID": 45,
+    "imageID": 20,
+    "displayName": "Insanity Wolf",
+    "urlName": "Insanity-Wolf",
+    "totalVotesScore": 3181,
+    "instancesCount": 310696,
+    "ranking": 14,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 45,
+    "totalVotesSum": 3750,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder20/400x/20.jpg"
+  },
+  {
+    "generatorID": 54,
+    "imageID": 42,
+    "displayName": "Joseph Ducreux",
+    "urlName": "Joseph-Ducreux",
+    "totalVotesScore": 3077,
+    "instancesCount": 297461,
+    "ranking": 15,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 54,
+    "totalVotesSum": 3254,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder42/400x/42.jpg"
+  },
+  {
+    "generatorID": 235,
+    "imageID": 564288,
+    "displayName": "Pedobear",
+    "urlName": "Pedobear",
+    "totalVotesScore": 2216,
+    "instancesCount": 252648,
+    "ranking": 20,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 235,
+    "totalVotesSum": 2476,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder288/400x/564288.jpg"
+  },
+  {
+    "generatorID": 68,
+    "imageID": 269,
+    "displayName": "Trollface",
+    "urlName": "Trollface",
+    "totalVotesScore": 3275,
+    "instancesCount": 249333,
+    "ranking": 16,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 68,
+    "totalVotesSum": 3726,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder269/400x/269.jpg"
+  },
+  {
+    "generatorID": 839,
+    "imageID": 876097,
+    "displayName": "Annoying Facebook Girl",
+    "urlName": "Annoying-Facebook-Girl",
+    "totalVotesScore": 1770,
+    "instancesCount": 233689,
+    "ranking": 26,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 839,
+    "totalVotesSum": 1770,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder97/400x/876097.jpg"
+  },
+  {
+    "generatorID": 29,
+    "imageID": 983,
+    "displayName": "Socially Awkward Penguin",
+    "urlName": "Socially-Awkward-Penguin",
+    "totalVotesScore": 3226,
+    "instancesCount": 228642,
+    "ranking": 17,
+    "entityVotesSummary": {
+    "entityName": "Generator",
+    "entityID": 29,
+    "totalVotesSum": 3624,
+    "userID": 14406514,
+    "userVoteScore": 0
+  },
+    "imageUrl": "/cache/images/folder983/400x/983.jpg"
+  }
+}
