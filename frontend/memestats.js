@@ -1,4 +1,5 @@
 import {selectByPopular} from './util/memegen_api_util';
+import {getMemeImages} from './util/meme_scraper';
 import {updatePopularMemes} from './update';
 import {buildMemeChart} from './meme_charts';
 
@@ -12,5 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // }, 1000);
 
+  // getMemeImages();
   buildMemeChart();
 });

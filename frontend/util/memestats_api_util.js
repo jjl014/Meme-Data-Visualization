@@ -1,17 +1,19 @@
 import $ from 'jquery';
 
 export const postPopularMeme = ({
-  displayName,
-  urlName,
-  instancesCount,
+  name,
+  url_name,
+  instances_count,
   ranking,
-  entityVotesSummary}) => {
+  total_votes,
+  img_url }) => {
     const meme = {
-      name: displayName,
-      url_name: urlName,
-      instances_count: instancesCount,
+      name,
+      url_name,
+      instances_count,
       ranking,
-      total_votes: entityVotesSummary['totalVotesSum']
+      total_votes,
+      img_url
     };
     return $.ajax({
       method: 'POST',
@@ -20,7 +22,7 @@ export const postPopularMeme = ({
     });
 };
 
-export const updatePopularMemes = ({
+export const updatePopularMeme = ({
   displayName,
   urlName,
   instancesCount,
