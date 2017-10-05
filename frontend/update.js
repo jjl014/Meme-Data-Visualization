@@ -14,9 +14,6 @@ export const updatePopularMemes = (page, day) => {
             total_votes: meme.entityVotesSummary['totalVotesSum']
           });
         });
-        console.log("Updated Mememes successfully");
-      } else {
-        console.log("Failed to grab data from memegenerator API");
       }
     });
 };

@@ -13,6 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // }, 1000);
 
-  // getMemeImages();
+  //getMemeImages();
   buildMemeChart();
 });

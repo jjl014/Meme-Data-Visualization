@@ -7,6 +7,7 @@ export const buildMemeChart = () => {
   let bubbles = null;
   let nodes = [];
   let defs = null;
+  let format = d3.format(",");
 
   let margin = {top: 50, right: 50, bottom: 50, left: 50};
 
@@ -19,8 +20,8 @@ export const buildMemeChart = () => {
 
   const ticked = () => {
     bubbles
-      .attr('cx', (d) => d.x)
-      .attr('cy', (d) => d.y);
+      .attr("cx", (d) => Math.max(d.x, width - d.radius))
+      .attr("cy", (d) => Math.max(d.y, width - d.radius));
   };
 
   getPopularMemes.then((result) => {
@@ -49,12 +50,10 @@ export const buildMemeChart = () => {
     });
 
     const simulation = d3.forceSimulation()
-    .velocityDecay(0.5)
+    .velocityDecay(0.2)
     .force('x', d3.forceX(center.x).strength(forceStrength))
     .force('y', d3.forceY(center.y).strength(forceStrength))
     .force("collide", d3.forceCollide((d) => radiusScale(d.value) + 1));
-
-    nodes = nodes.sort((a,b) => (b.value - a.value));
 
     svg = d3.select("#meme_bubble_chart")
       .append("svg")
@@ -64,6 +63,17 @@ export const buildMemeChart = () => {
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
     defs = svg.append("defs");
+
+    const tooltip = d3.select("body").append("div")
+      .style("visibility", "hidden")
+      .style("position", "absolute")
+      .style("padding", "10px")
+      .style("color", "white")
+      .style("z-index", "10")
+      .style("background-color", "rgba(0,0,0,0.8)")
+      .style("border-radius", "5px")
+      .style("font", "12px sans-serif")
+      .text("tooltip");
 
     defs.selectAll(".meme-pattern")
       .data(nodes)
@@ -79,47 +89,54 @@ export const buildMemeChart = () => {
       .attr("height", 1)
       .attr("width", 1)
       .attr("preserveAspectRatio", "none");
-      // .attr("x", 100)
-      // .attr("y", 100)
 
     bubbles = svg.selectAll('.meme')
       .data(nodes)
       .enter().append('circle')
       .attr('class','meme')
-      .attr('r', 10)
-      .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y)
+      .attr('r', (d) => radiusScale(d.value))
+      .attr("cx", (d) => Math.max(d.x, width - d.radius))
+      .attr("cy", (d) => Math.max(d.y, width - d.radius))
       .attr('fill', (d) => `url(#${d.url_name})`)
-      .on('click', (d) => console.log(d))
+      .on('mouseover', (d) => {
+        tooltip.html(
+          `Name: ${d.name}<br/>
+           Rank: ${d.ranking}<br/>
+           Usage Count: ${format(d.value)}</br>`
+        );
+        tooltip.style("visibility", "visible");
+      })
+      .on("mousemove", () => {
+        return tooltip
+          .style("top", (d3.event.pageY-10)+"px")
+          .style("left",(d3.event.pageX+10)+"px");
+      })
+      .on("mouseout", () => tooltip.style("visibility", "hidden"))
       .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended));
 
-
     function dragstarted(d) {
       if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d3.select(this)
-        .raise().
-        classed("active", true);
+      d.fx = d.x, d.fy = d.y;
+      d3.select(this).raise().classed("active", true);
     }
 
     function dragged(d) {
-      d3.select(this)
-        .attr("cx", d.x = d3.event.x)
-        .attr("cy", d.y = d3.event.y);
+      d.fx = d3.event.x, d.fy = d3.event.y;
     }
 
     function dragended(d) {
-      if (!d3.event.active) simulation.alphaTarget(0).restart();
-      d3.select(this)
-        .classed("active", false);
+      if (!d3.event.active) simulation.alphaTarget(0);
+      d.fx = null, d.fy = null;
+      d3.select(this).classed("active", false);
     }
 
-    bubbles
-      .transition()
-      .duration(2000)
-      .attr('r', (d) => radiusScale(d.value));
+    // bubbles
+    //   .transition()
+    //   .duration(2000)
+    //   .attr('r', (d) => radiusScale(d.value));
 
     simulation
       .nodes(nodes)

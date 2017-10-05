@@ -18,7 +18,7 @@ class Api::MemesController < ApplicationController
   end
 
   def index
-    @memes = Meme.all.limit(40)
+    @memes = Meme.all.limit(100)
   end
 
   private
