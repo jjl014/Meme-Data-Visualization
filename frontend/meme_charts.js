@@ -11,17 +11,17 @@ export const buildMemeChart = () => {
 
   let margin = {top: 50, right: 50, bottom: 50, left: 50};
 
-  let width = 900 - margin.right - margin.left,
-      height = 600 - margin.top - margin.bottom;
+  let width = 1000 - margin.right - margin.left,
+      height = 900 - margin.top - margin.bottom;
 
   let center = {x: width/2, y: height/2};
 
-  let forceStrength = 0.15;
+  let forceStrength = 0.02;
 
   const ticked = () => {
     bubbles
-      .attr('cx', (d) => d.x)
-      .attr('cy', (d) => d.y);
+      .attr('cx', (d) => Math.max(d.radius, Math.min(d.x, width - d.radius)))
+      .attr('cy', (d) => Math.max(d.radius, Math.min(d.y, height - d.radius)));
   };
 
   getPopularMemes.then((result) => {
@@ -49,11 +49,6 @@ export const buildMemeChart = () => {
       };
     });
 
-    const simulation = d3.forceSimulation()
-    .velocityDecay(0.2)
-    .force('x', d3.forceX(center.x).strength(forceStrength))
-    .force('y', d3.forceY(center.y).strength(forceStrength))
-    .force("collide", d3.forceCollide((d) => radiusScale(d.value) + 1));
 
     svg = d3.select("#meme_bubble_chart")
       .append("svg")
@@ -133,14 +128,19 @@ export const buildMemeChart = () => {
       d3.select(this).classed("active", false);
     }
 
+    const simulation = d3.forceSimulation(nodes)
+    .force('x', d3.forceX(center.x).strength(forceStrength))
+    .force('y', d3.forceY(center.y).strength(forceStrength))
+    .force("collide", d3.forceCollide((d) => radiusScale(d.value) + 1))
+    .on('tick', ticked);
     // bubbles
     //   .transition()
     //   .duration(2000)
     //   .attr('r', (d) => radiusScale(d.value));
 
-    simulation
-      .nodes(nodes)
-      .on('tick', ticked);
+    // simulation
+    //   .nodes(nodes)
+    //   .on('tick', ticked);
   });
 };
 
