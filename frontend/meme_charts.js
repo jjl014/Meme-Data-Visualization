@@ -20,8 +20,8 @@ export const buildMemeChart = () => {
 
   const ticked = () => {
     bubbles
-      .attr("cx", (d) => Math.max(d.x, width - d.radius))
-      .attr("cy", (d) => Math.max(d.y, width - d.radius));
+      .attr('cx', (d) => d.x)
+      .attr('cy', (d) => d.y);
   };
 
   getPopularMemes.then((result) => {
@@ -95,8 +95,8 @@ export const buildMemeChart = () => {
       .enter().append('circle')
       .attr('class','meme')
       .attr('r', (d) => radiusScale(d.value))
-      .attr("cx", (d) => Math.max(d.x, width - d.radius))
-      .attr("cy", (d) => Math.max(d.y, width - d.radius))
+      .attr("cx", (d) => d.x)
+      .attr("cy", (d) => d.y)
       .attr('fill', (d) => `url(#${d.url_name})`)
       .on('mouseover', (d) => {
         tooltip.html(
