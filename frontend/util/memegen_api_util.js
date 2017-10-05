@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 const API_KEY = "2db6b651-e3e1-4f42-819f-b5e2614a5680";
 const API_KEY2 = "cb4ebfd1-2674-48e1-ab7c-267873f3f303";
-const API_URL = "https://version1.api.memegenerator.net/";
+const API_URL = "http://version1.api.memegenerator.net/";
 
 export const selectByPopular = (page, days) => (
   $.ajax({
