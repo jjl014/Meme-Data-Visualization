@@ -33,5 +33,5 @@ You can double click on a meme bubble and it will generate a list of popular mem
 [d3]: https://github.com/d3/d3
 [d3-force]: https://github.com/d3/d3-force
 [d3-drag]: https://github.com/d3/d3-drag
-[axis]: https://github.com/axios/axios
+[axios]: https://github.com/axios/axios
 [cheerio]: https://github.com/cheeriojs/cheerio
