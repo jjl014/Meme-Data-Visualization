@@ -8,9 +8,11 @@ Memes have become a global phenomenon over the years and it's become a way to ex
 
 ## Features
 
-MemeStats utilizes [D3][d3] to create an interactive bubble chart. Additional libraries used from D3 were [D3-drag][d3-drag] and [D3-force][d3-force]. [Axios][axios] and [Cheerio][cheerio] were also employed to scrape for additional information and data. The app also makes use of the memegenerator API which was very unstable, so response data was saved to a Rails backend.
+MemeStats utilizes [D3][d3] to create an interactive bubble chart. Additional libraries used from D3 were [D3-drag][d3-drag] and [D3-force][d3-force]. [Axios][axios] and [Cheerio][cheerio] were also employed to scrape for additional information and data. The app also makes use of the memegenerator API which was very unstable, so response data was saved to a Rails backend. The size of each bubble is related to the usage count for each meme.
 
 ## Main Page
+
+You can drag the different meme bubbles around and watch them interact with one another.
 
 ![MemeStats Main][memestats-main]
 
