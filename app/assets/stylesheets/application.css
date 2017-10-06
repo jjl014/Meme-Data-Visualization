@@ -29,7 +29,6 @@ h1 {
 h4 {
   font-size: 25px;
   padding-top: 12px;
-  /*padding-bottom: 10px;*/
   width: fit-content;
 }
 
@@ -82,7 +81,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  display:; flex;
   padding-right: 15px;
 }
 
