@@ -16,7 +16,6 @@ export const buildMemeList = (urlName, images) => {
         .attr("class", "meme-list-item-container")
         .append("li")
         .attr("class", "meme-list-item")
-        .style("position", "relative")
         .append("img")
         .attr("src", (d)=> {
           return images[d.displayName];
@@ -28,14 +27,15 @@ export const buildMemeList = (urlName, images) => {
         .data(data)
         .append("p")
         .attr("class", "top-line meme-text")
-        .html((d) => d.text0)
-        .style("position", "absolute")
+        .html((d) => d.text0);
+        // .style("position", "absolute");
 
       d3.selectAll(".meme-list-item")
         .data(data)
         .append("p")
         .attr("class", "bot-line meme-text")
-        .html((d) => d.text1)
+        .html((d) => d.text1);
+        // .style("position", "absolute");
     }
   });
 };
