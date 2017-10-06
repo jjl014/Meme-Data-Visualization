@@ -5,11 +5,18 @@ export const buildMemeList = (urlName, images) => {
   getPopularForMeme("", urlName).then((response) => {
     if (response.result && response.result.length > 0) {
       const data = Object.keys(response.result).map(key => response.result[key]);
+      // d3.selectAll("li.meme-list-item").remove();
+      // d3.selectAll("div.meme-list-item-container").remove();
 
-      d3.selectAll("li.meme-list-item").remove();
-      d3.selectAll("div.meme-list-item-container").remove();
+      d3.select("div.meme-list").remove();
 
-      d3.select("ul.meme-list-ul").selectAll("li.meme-list-item")
+      const memeList = d3.select(".memes-container")
+        .append("div")
+        .attr("class","meme-list")
+        .append("ul")
+        .attr("class", "meme-list-ul");
+
+      memeList.selectAll("li.meme-list-item")
         .data(data)
         .enter()
         .append("div")

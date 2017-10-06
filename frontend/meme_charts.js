@@ -1,6 +1,6 @@
-const d3 = require('d3');
-import {getPopularMemes} from './util/memestats_api_util';
-import {buildMemeList} from './meme_list';
+const d3 = require("d3");
+import {getPopularMemes} from "./util/memestats_api_util";
+import {buildMemeList} from "./meme_list";
 
 export const buildMemeChart = (images) => {
 
@@ -14,7 +14,7 @@ export const buildMemeChart = (images) => {
   let margin = {top: 0, right: 0, bottom: 0, left: 0};
 
   let width = 830 - margin.right - margin.left,
-      height = 800 - margin.top - margin.bottom;
+      height = 830 - margin.top - margin.bottom;
 
   let center = {x: width/2, y: height/2};
 
@@ -22,8 +22,8 @@ export const buildMemeChart = (images) => {
 
   const ticked = () => {
     bubbles
-      .attr('cx', (d) => Math.max(d.radius, Math.min(d.x, width - d.radius)))
-      .attr('cy', (d) => Math.max(d.radius, Math.min(d.y, height - d.radius)));
+      .attr("cx", (d) => Math.max(d.radius, Math.min(d.x, width - d.radius)))
+      .attr("cy", (d) => Math.max(d.radius, Math.min(d.y, height - d.radius)));
 
   };
 
@@ -78,10 +78,6 @@ export const buildMemeChart = (images) => {
 
     defs = svg.append("defs");
 
-    const memeList = d3.select("#meme-list")
-      .append("ul")
-      .attr("class", "meme-list-ul");
-
     const tooltip = d3.select("body").append("div")
       .style("visibility", "hidden")
       .style("position", "absolute")
@@ -95,7 +91,7 @@ export const buildMemeChart = (images) => {
 
     defs.selectAll(".meme-pattern")
       .data(nodes)
-      .enter().append('pattern')
+      .enter().append("pattern")
       .attr("class", "meme-pattern")
       .attr("id", (d) => d.url_name)
       .attr("height", "100%")
@@ -108,19 +104,19 @@ export const buildMemeChart = (images) => {
       .attr("width", 1)
       .attr("preserveAspectRatio", "none");
 
-    bubbles = svg.selectAll('.meme')
+    bubbles = svg.selectAll(".meme")
       .data(nodes)
-      .enter().append('circle')
-      .attr('class','meme')
-      .attr('r', 25)//(d) => radiusScale(d.value))
+      .enter().append("circle")
+      .attr("class","meme")
+      .attr("r", (d) => radiusScale(d.value))
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
-      .attr('fill', 'black')//(d) => `url(#${d.url_name})`)
-      .on('click', (d) => {
-        // if (d3.event.defaultPrevented) return;
+      .attr("fill", (d) => `url(#${d.url_name})`)
+      .on("click", (d) => {
+        if (d3.event.defaultPrevented) return;
         buildMemeList(d.url_name, images);
       })
-      .on('mouseover', (d) => {
+      .on("mouseover", (d) => {
         tooltip.html(
           `Name: ${titleize(d.name)}<br/>
            Rank: ${d.ranking}<br/>
@@ -156,15 +152,15 @@ export const buildMemeChart = (images) => {
     }
 
     const simulation = d3.forceSimulation(nodes)
-    .force('x', d3.forceX(center.x).strength(forceStrength))
-    .force('y', d3.forceY(center.y).strength(forceStrength))
+    .force("x", d3.forceX(center.x).strength(forceStrength))
+    .force("y", d3.forceY(center.y).strength(forceStrength))
     .force("collide", d3.forceCollide((d) => radiusScale(d.value) + 1))
-    .on('tick', ticked);
+    .on("tick", ticked);
 
-
-    bubbles
-      .transition()
-      .duration(2000)
-      .attr('r', (d) => radiusScale(d.value));
+    // Commented due to rendering lag
+    // bubbles
+    //   .transition()
+    //   .duration(2000)
+    //   .attr("r", (d) => radiusScale(d.value));
   });
 };
