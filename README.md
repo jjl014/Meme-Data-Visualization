@@ -16,6 +16,34 @@ You can drag the different meme bubbles around and watch them interact with one 
 
 ![MemeStats Main][memestats-main]
 
+```javascript
+defs.selectAll(".meme-pattern")
+  .data(nodes)
+  .enter().append("pattern")
+  .attr("class", "meme-pattern")
+  .attr("id", (d) => d.url_name)
+  .attr("height", "100%")
+  .attr("width", "100%")
+  .attr("patternContentUnits", "objectBoundingBox")
+  .append("image")
+  .attr("xmlns:xlink", "https://www.w3.org/1999/xlink")
+  .attr("xlink:href", (d) => d.img_url)
+  .attr("height", 1)
+  .attr("width", 1)
+  .attr("preserveAspectRatio", "none");
+
+bubbles = svg.selectAll(".meme")
+  .data(nodes)
+  .enter().append("circle")
+  .attr("class","meme")
+  .attr("r", (d) => radiusScale(d.value))
+  .attr("cx", (d) => d.x)
+  .attr("cy", (d) => d.y)
+  .attr("fill", (d) => `url(#${d.url_name})`)
+```
+
+The bubbles were created by attaching svg images to each circle within the chart using patterns to make it reusable.
+
 ## Meme List
 
 You can double click on a meme bubble and it will generate a list of popular memes that were created using it. 
@@ -25,6 +53,7 @@ You can double click on a meme bubble and it will generate a list of popular mem
 
 ### Future Directions
 
+* Optimization for the image bubbles
 * Allow users to create Memes
 * Store data about meme usage information to generate a better real time visualization
 * Different charts for a more full experience
