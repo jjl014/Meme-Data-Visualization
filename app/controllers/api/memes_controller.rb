@@ -3,14 +3,12 @@ class Api::MemesController < ApplicationController
     @meme = Meme.find_by(name: meme_params[:name])
     if @meme
       if @meme.update_attributes(meme_params)
-        # render :show
       else
         render json: @meme.errors.full_messages
       end
     else
       @meme = Meme.new(meme_params)
       if @meme.save
-        # render :show
       else
         render json: @meme.errors.full_messages
       end

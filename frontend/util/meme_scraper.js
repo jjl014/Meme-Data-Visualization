@@ -16,10 +16,6 @@ export const getMemeImages = () => {
         const updatedMeme = Object.assign({}, meme, {img_url: imgUrl});
         postPopularMeme(updatedMeme);
       });
-      // Download the image by adding an a tag
-      // const a = $("<a>")
-      // .attr("href", `${base_url}`)
-      // .attr()
     });
   });
 };

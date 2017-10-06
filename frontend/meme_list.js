@@ -5,8 +5,6 @@ export const buildMemeList = (urlName, images) => {
   getPopularForMeme("", urlName).then((response) => {
     if (response.result && response.result.length > 0) {
       const data = Object.keys(response.result).map(key => response.result[key]);
-      // d3.selectAll("li.meme-list-item").remove();
-      // d3.selectAll("div.meme-list-item-container").remove();
 
       d3.select("div.meme-list").remove();
 
@@ -35,14 +33,12 @@ export const buildMemeList = (urlName, images) => {
         .append("p")
         .attr("class", "top-line meme-text")
         .html((d) => d.text0);
-        // .style("position", "absolute");
 
       d3.selectAll(".meme-list-item")
         .data(data)
         .append("p")
         .attr("class", "bot-line meme-text")
         .html((d) => d.text1);
-        // .style("position", "absolute");
     }
   });
 };
