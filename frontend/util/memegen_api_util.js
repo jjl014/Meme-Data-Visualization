@@ -8,10 +8,25 @@ export const selectByPopular = (page, days) => (
   $.ajax({
     method: 'GET',
     url: `${API_URL}Generators_Select_ByPopular`,
-    data: { pageIndex: page,
-            pageSize: 25,
-            days: days,
-            apiKey: API_KEY2}
+    data: {
+      pageIndex: page,
+      pageSize: 25,
+      days: days,
+      apiKey: API_KEY2
+    }
+  })
+);
+
+export const getPopularForMeme = (page, urlName) => (
+  $.ajax({
+    method: 'GET',
+    url: `${API_URL}Instances_Select_ByPopular`,
+    data: {
+      pageIndex: page,
+      urlName,
+      languageCode: "en",
+      apiKey: API_KEY2
+    }
   })
 );
 

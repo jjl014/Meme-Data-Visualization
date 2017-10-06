@@ -1,38 +1,57 @@
 const d3 = require('d3');
 import {getPopularMemes} from './util/memestats_api_util';
+import {buildMemeList} from './meme_list';
 
-export const buildMemeChart = () => {
+export const buildMemeChart = (images) => {
 
   let svg = null;
   let bubbles = null;
   let nodes = [];
   let defs = null;
   let format = d3.format(",");
+  let currentMeme = null;
 
-  let margin = {top: 50, right: 50, bottom: 50, left: 50};
+  let margin = {top: 0, right: 0, bottom: 0, left: 0};
 
-  let width = 1000 - margin.right - margin.left,
-      height = 900 - margin.top - margin.bottom;
+  let width = 830 - margin.right - margin.left,
+      height = 800 - margin.top - margin.bottom;
 
   let center = {x: width/2, y: height/2};
 
-  let forceStrength = 0.02;
+  let forceStrength = 0.025;
 
   const ticked = () => {
     bubbles
       .attr('cx', (d) => Math.max(d.radius, Math.min(d.x, width - d.radius)))
       .attr('cy', (d) => Math.max(d.radius, Math.min(d.y, height - d.radius)));
+
+  };
+
+  const titleize = (name) => {
+    return name.split(" ").map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(" ");
+  };
+
+  const createMemeList = (meme, imageList) => {
+    if (meme != currentMeme) {
+      console.log("wtf");
+      currentMeme = meme;
+      buildMemeList(currentMeme, imageList);
+    }
   };
 
   getPopularMemes.then((result) => {
-    const data = Object.keys(result).map(key => result[key]);
+    const data = Object.keys(result).map(key => {
+      images[result[key].name] = result[key].img_url;
+      return result[key];
+    });
 
     const maxAmount = d3.max(data, (d) => +d.instances_count);
 
     const radiusScale = d3.scaleSqrt()
       .domain([0, maxAmount])
       .range([10,80]);
-
 
     nodes = data.map((d) => {
       return {
@@ -50,7 +69,7 @@ export const buildMemeChart = () => {
     });
 
 
-    svg = d3.select("#meme_bubble_chart")
+    svg = d3.select("#meme-bubble-chart")
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -58,6 +77,10 @@ export const buildMemeChart = () => {
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
     defs = svg.append("defs");
+
+    const memeList = d3.select("#meme-list")
+      .append("ul")
+      .attr("class", "meme-list-ul");
 
     const tooltip = d3.select("body").append("div")
       .style("visibility", "hidden")
@@ -89,13 +112,17 @@ export const buildMemeChart = () => {
       .data(nodes)
       .enter().append('circle')
       .attr('class','meme')
-      .attr('r', (d) => radiusScale(d.value))
+      .attr('r', 25)//(d) => radiusScale(d.value))
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
-      .attr('fill', (d) => `url(#${d.url_name})`)
+      .attr('fill', 'black')//(d) => `url(#${d.url_name})`)
+      .on('click', (d) => {
+        // if (d3.event.defaultPrevented) return;
+        buildMemeList(d.url_name, images);
+      })
       .on('mouseover', (d) => {
         tooltip.html(
-          `Name: ${d.name}<br/>
+          `Name: ${titleize(d.name)}<br/>
            Rank: ${d.ranking}<br/>
            Usage Count: ${format(d.value)}</br>`
         );
@@ -133,17 +160,11 @@ export const buildMemeChart = () => {
     .force('y', d3.forceY(center.y).strength(forceStrength))
     .force("collide", d3.forceCollide((d) => radiusScale(d.value) + 1))
     .on('tick', ticked);
-    // bubbles
-    //   .transition()
-    //   .duration(2000)
-    //   .attr('r', (d) => radiusScale(d.value));
 
-    // simulation
-    //   .nodes(nodes)
-    //   .on('tick', ticked);
+
+    bubbles
+      .transition()
+      .duration(2000)
+      .attr('r', (d) => radiusScale(d.value));
   });
-};
-
-const createMemeItem = (data) => {
-
 };
