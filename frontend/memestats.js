@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.selectByPopular = selectByPopular;
   window.updatePopularMemes = updatePopularMemes;
   // window.setTimeout(() => {
-    for(let i = 0; i < 4; i++) {
-      updatePopularMemes(i.toString(), "");
-    }
+  //   for(let i = 0; i < 4; i++) {
+  //     updatePopularMemes(i.toString(), "");
+  //   }
   // }
-  getMemeImages();
+  // getMemeImages();
 
   const images = {};
   buildMemeChart(images);
