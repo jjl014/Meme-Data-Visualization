@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for(let i = 0; i < 4; i++) {
       updatePopularMemes(i.toString(), "");
     }
-  }
+  });
   getMemeImages();
 
   const images = {};
