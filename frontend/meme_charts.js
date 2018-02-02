@@ -112,6 +112,11 @@ export const buildMemeChart = (images) => {
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
       .attr("fill", (d) => `url(#${d.url_name})`)
+      .call(
+        d3.drag()
+          .on("drag", dragged)
+          .on("end", dragended)
+      )
       .on("click", (d) => {
         if (d3.event.defaultPrevented) return;
         buildMemeList(d.url_name, images);
@@ -129,24 +134,16 @@ export const buildMemeChart = (images) => {
           .style("top", (d3.event.pageY-10)+"px")
           .style("left",(d3.event.pageX+10)+"px");
       })
-      .on("mouseout", () => tooltip.style("visibility", "hidden"))
-      .call(d3.drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended));
-
-    function dragstarted(d) {
-      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x, d.fy = d.y;
-      d3.select(this).raise().classed("active", true);
-    }
+      .on("mouseout", () => tooltip.style("visibility", "hidden"));
 
     function dragged(d) {
+      simulation.alphaTarget(0.2).restart();
+      d3.select(this).raise().classed("active", true);
       d.fx = d3.event.x, d.fy = d3.event.y;
     }
 
     function dragended(d) {
-      if (!d3.event.active) simulation.alphaTarget(0);
+      if (!d3.event.active) simulation.alphaTarget(0.025);
       d.fx = null, d.fy = null;
       d3.select(this).classed("active", false);
     }
